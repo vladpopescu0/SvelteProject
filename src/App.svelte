@@ -1,5 +1,5 @@
 <script>
-	let m = { x:3, y:3};
+	let m = { x:4, y:3};
 
 
 	function handleMousemove(event) {
@@ -16,3 +16,7 @@
 <div on:mousemove="{e => m = {x: e.clientX}}">
 	The mouse position is {m.x} x {m.y}
 </div>
+
+<h1>
+	Sunt tigan
+</h1>
