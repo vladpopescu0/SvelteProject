@@ -1,10 +1,11 @@
 <script>
-	let m = { x:0, y:0};
+	let m = { x:3, y:3};
+
 
 	function handleMousemove(event) {
 		m.x = event.clientX;
 		m.y = event.clientY;
-	}
+	}		
 </script>
 
 
