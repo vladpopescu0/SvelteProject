@@ -12,11 +12,8 @@
 <style>
 	div { width: 100%; height: 100%; }
 </style>
-
-<div on:mousemove="{e => m = {x: e.clientX}}">
+<h1 >Sunt tigan</h1>
+<div on:mousemove="{e => m = {x: e.clientX,y:e.clientY}}">
 	The mouse position is {m.x} x {m.y}
 </div>
 
-<h1>
-	Sunt tigan
-</h1>
