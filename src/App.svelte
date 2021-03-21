@@ -1,19 +1,54 @@
 <script>
-	let m = { x:4, y:3};
+	import Ceva from './Ceva.svelte'
+	let value1 = 0;
+	$: ceva = 0;
 
-
-	function handleMousemove(event) {
-		m.x = event.clientX;
-		m.y = event.clientY;
-	}		
+	function addValue(){
+		ceva=Number(ceva)+Number(value1)
+	}
+	function minusValue(){
+		ceva = Number(ceva)-Number(value1)
+	}
+	function multiplyValue(){
+		ceva = Number(ceva)*Number(value1)
+	}
+	function divideValue(){
+		ceva=(Number(ceva)/Number(value1)).toFixed(3)
+	}
+	function laLoc(){
+		value1=0
+	}
 </script>
+	<input class="center-block" bind:value={value1}>
+	
+	<h1 class="bazat">Rezultatul este: {ceva}</h1>
+	
+	<style>
+
+		.bazat {
+			text-align: center;
+			align-self: center;
+		}
+		.center-block {
+			margin: auto;
+			display: block;
+		}
+		button {
+			margin:auto;
+			display:block;
+			height:4rem;
+			width: 8rem;
+			background-color: yellow;
+		}
 
 
-<style>
-	div { width: 100%; height: 100%; }
-</style>
-<h1 >Sunt tigan</h1>
-<div on:mousemove="{e => m = {x: e.clientX,y:e.clientY}}">
-	The mouse position is {m.x} x {m.y}
-</div>
-
+	</style>
+	
+<Ceva on:click={addValue} on:click={laLoc}/>
+<button on:click={minusValue} on:click={laLoc}>
+		-
+</button>
+<button on:click={multiplyValue} on:click={laLoc}>*</button>
+{#if value1!==0}
+<button on:click={divideValue} on:click={laLoc}>/</button>
+{/if}
